@@ -1,4 +1,4 @@
-### 一、RabbitMQ学习
+### RabbitMQ
 
 #### 1、RabbitMQ简介
 
@@ -51,7 +51,7 @@
 
 ![](RabbitMQ.assets/image-20200311182438041.png)
 
-#### 2.RabbitMQ 的安装
+#### 2、RabbitMQ 的安装
 
 `官网下载地址`: https://www.rabbitmq.com/download.html
 
@@ -156,11 +156,11 @@ RABBITMQ_DEFAULT_PASS：默认用户名的密码
 # 浏览器打开web管理端：http://Server-IP:15672
 ```
 
-#### 3. web管理界面介绍
+#### 3、web管理界面介绍
 
 
 
-#### 4.RabbitMQ支持的消息模型
+#### 4、RabbitMQ支持的消息模型
 
 ![image-20200531110650141](RabbitMQ.assets/image-20200531110650141.png)
 
@@ -168,7 +168,7 @@ RABBITMQ_DEFAULT_PASS：默认用户名的密码
 
 ![image-20200531110740433](RabbitMQ.assets/image-20200531110740433.png)
 
-#### 5.RabbitMQ入门
+#### 5、RabbitMQ入门
 
 ##### 5.1、引入依赖
 
@@ -496,7 +496,7 @@ channel.basicConsume(queue,true,new DefaultConsumer(channel){
 
  ![image-20200316114000459](RabbitMQ.assets/image-20200316114000459.png)
 
-#### 6.SpringBoot中使用RabbitMQ
+#### 6、SpringBoot中使用RabbitMQ
 
 ##### 	1. 引入依赖
 
@@ -716,7 +716,7 @@ public class HelloCustomer {
 
     ----
 
-#### 7.MQ的应用场景
+#### 7、MQ的应用场景
 
 ##### 7.1 异步处理
 
@@ -774,9 +774,9 @@ public class HelloCustomer {
 
 -----
 
-#### 8. RabbitMQ的集群
+#### 8、RabbitMQ的集群
 
-#### 8.1、普通集群(副本集群)
+##### 8.1、普通集群(副本集群)
 
 > All data/state required for the operation of a RabbitMQ broker is replicated across all nodes. An exception to this are message queues, which by default reside on one node, though they are visible and reachable from all nodes. To replicate queues across nodes in a cluster   --摘自官网
 
@@ -863,7 +863,7 @@ public class HelloCustomer {
 
     ---
 
-#### 8.2、镜像集群
+##### 8.2、镜像集群
 
 > This guide covers mirroring (queue contents replication) of classic queues  --摘自官网
 >
