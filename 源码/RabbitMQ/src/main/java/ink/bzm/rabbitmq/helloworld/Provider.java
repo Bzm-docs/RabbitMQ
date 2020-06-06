@@ -4,12 +4,14 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.MessageProperties;
+import ink.bzm.rabbitmq.utils.RabbitMQUtils;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 /**
+ * 生产者
  * @author: buzhengmiao    www.bzm.ink
  * @time: 2020/5/31 11:23
  */
@@ -21,7 +23,7 @@ public class Provider {
 
     @Test
     public void testSendMessage() throws IOException, TimeoutException {
-        //创建连接mq的连接工厂对象
+   /*     //创建连接mq的连接工厂对象
         ConnectionFactory connectionFactory = new ConnectionFactory();
         //设置连接RabbitMQ的主机
         connectionFactory.setHost("39.105.164.59");
@@ -36,6 +38,10 @@ public class Provider {
 
         //获取连接对象
         Connection connection = connectionFactory.newConnection();
+*/
+
+        //通过RabbitMQUtils工具类，获得连接对象
+        Connection connection = RabbitMQUtils.getConnection();
 
         //获取连接中通道
         Channel channel = connection.createChannel();
@@ -52,6 +58,10 @@ public class Provider {
 
         //参数1: 交换机名称 参数2:队列名称  参数3:传递消息额外设置  参数4:消息的具体内容
         channel.basicPublish("","hello", MessageProperties.PERSISTENT_TEXT_PLAIN,"hello rabbitmq".getBytes());
+
+        //关闭
+        channel.close();
+        connection.close();
 
     }
 }
