@@ -173,7 +173,6 @@ RABBITMQ_DEFAULT_PASS：默认用户名的密码
 ##### 5.1、引入依赖
 
 ```xml
-
 <dependency>
     <groupId>com.rabbitmq</groupId>
     <artifactId>amqp-client</artifactId>
